@@ -1,58 +1,19 @@
 $( document ).ready(function(){
 
 
-var flowers = [
-      "Raflesia",
-      "Camomile",
-      "Hastas",
-      "Lilic",
-      "anemone"
-     ];
+  var flowers = [
+  "Raflesia",
+  "Camomile",
+  "Hastas",
+  "Lilic",
+  "anemone"
+  ];
 
      // Calling the renderButtons function to display the intial buttons
-      renderButtons();
-    
+     renderButtons();
 
-      // displayFlowerInfo function re-renders the HTML to display the appropriate content
-      // function displayFlowerInfo() {
 
-      //   var flower = $(this).attr("data-flower");
-      //   var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-      //   flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=1";
-
-      //   // Creating an AJAX call for the specific flower button being clicked
-      //   $.ajax({
-      //     url: queryURL,
-      //     method: "GET"
-      //   }).done(function(response) {
-
-      //     // Creating a div to hold the flower
-      //     var flowerDiv = $("<div class='flower'>");
-
-      //     // Storing the rating data
-      //     var rating = response.Rated;
-
-      //     // Creating an element to have the rating displayed
-      //     var pOne = $("<p>").text("Rating: " + rating);
-
-      //     // Displaying the rating
-      //     flowerDiv.append(pOne);
-
-         
-      //     // Retrieving the URL for the image
-      //     var imgURL = response.Poster;
-
-      //     // Creating an element to hold the image
-      //     var image = $("<img>").attr("src", imgURL);
-
-      //     // Appending the image
-      //     flowerDiv.append(image);
-
-      //     // Putting the entire flower above the previous flowers
-      //     $("#flowers-view").prepend(flowerDiv);
-      //   });
-
-      // }
+     
 
       // Function for displaying flower data
       function renderButtons() {
@@ -95,47 +56,47 @@ var flowers = [
 
       
 
-    $(".flower").on("click", function() {
+      $(".flower").on("click", function() {
     // have a problem here as it grabs dynamicaly created buttons but static ones it does not grab
 
-      var flower = $(this).attr("data-flower");
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=10";
+    var flower = $(this).attr("data-flower");
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+    flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=10";
 
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).done(function(response) {
- 
-
-
-           var results = response.data;
-
-          for (var i = 0; i < results.length; i++) {
-            var flowerDiv = $("<div class='item'>");
-
-            var rating = results[i].rating;
-
-            var p = $("<p>").text("Rating: " + rating);
-
-            var flowerImage = $("<img>");
-            flowerImage.attr("src", results[i].images.fixed_height_still.url);
-
-            flowerImage.attr("src_moving", results[i].images.fixed_height.url);
-            flowerImage.attr("src_still", results[i].images.fixed_height_still.url);
-            flowerImage.attr("src_state", "still");
-            flowerImage.attr("class", "img");
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
 
 
-            flowerDiv.prepend(p);
-            flowerDiv.prepend(flowerImage);
 
-            $("#gifs-appear-here").prepend(flowerDiv);
-          }
-          console.log(response);
+     var results = response.data;
 
-  $("#gifs-appear-here").on("click", ".img", function() {
-  
+     for (var i = 0; i < results.length; i++) {
+      var flowerDiv = $("<div class='item'>");
+
+      var rating = results[i].rating;
+
+      var p = $("<p>").text("Rating: " + rating);
+
+      var flowerImage = $("<img>");
+      flowerImage.attr("src", results[i].images.fixed_height_still.url);
+
+      flowerImage.attr("src_moving", results[i].images.fixed_height.url);
+      flowerImage.attr("src_still", results[i].images.fixed_height_still.url);
+      flowerImage.attr("src_state", "still");
+      flowerImage.attr("class", "img");
+
+
+      flowerDiv.prepend(p);
+      flowerDiv.prepend(flowerImage);
+
+      $("#gifs-appear-here").prepend(flowerDiv);
+    }
+    console.log(response);
+
+    $("#gifs-appear-here").on("click", ".img", function() {
+
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var src_state = $(this).attr("src_state");
       var src_moving = $(this).attr("src_moving");
@@ -154,8 +115,8 @@ var flowers = [
         $(this).attr("src_state", "still");
       }
 
-        });
     });
-   });
-   
- });
+  });
+  });
+
+    });

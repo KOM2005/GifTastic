@@ -10,62 +10,62 @@ body {
 
 }
 .container {
-      size: 200px;
-    }
-    button,
-    form,
-    input {
-      margin: 5px;
+	size: 200px;
+}
+button,
+form,
+input {
+	margin: 5px;
 
-.clear-both {
-	clear:both;
-}
-#gifts-appear-here {
-	max-height: 200px;
-}
-div.gifts-appear-here {
-	height: 200px;
-}
+	.clear-both {
+		clear:both;
+	}
+	#gifts-appear-here {
+		max-height: 200px;
+	}
+	div.gifts-appear-here {
+		height: 200px;
+	}
 
-.form-control {
-	margin-left:10%;
-	margin-right:10%;
-	margin-top:15px;
-	width:80%;
-	background-color:rgba(240, 240, 240, 1);
-}
+	.form-control {
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:15px;
+		width:80%;
+		background-color:rgba(240, 240, 240, 1);
+	}
 
-.gifButton {
-	background-color:rgba(200, 255, 255, 1);
-	margin-left:5px; 
-}
+	.gifButton {
+		background-color:rgba(200, 255, 255, 1);
+		margin-left:5px; 
+	}
 
-.div-css {
-	float:left;
-	margin:10px;
-	border:2px solid black;
-	border-radius: 5px;
-}
+	.div-css {
+		float:left;
+		margin:10px;
+		border:2px solid black;
+		border-radius: 5px;
+	}
 
-.item
- {
-	float:left;
-	margin:10px;
-	border:2px solid black;
-	border-radius: 5px;
-}
-div.header, div.container{
-	height: 2000%;
-}
+	.item
+	{
+		float:left;
+		margin:10px;
+		border:2px solid black;
+		border-radius: 5px;
+	}
+	div.header, div.container{
+		height: 2000%;
+	}
 
-div {
-    height: 200px;
-    width: 50%;
-    background-color: powderblue;
-}
+	div {
+		height: 200px;
+		width: 50%;
+		background-color: powderblue;
+	}
 
-div#gifs-appear-here{
-	 height: 200px;
-    width: 50%;
-    
-}
+	div#gifs-appear-here{
+		height: 200px;
+		width: 50%;
+		
+	}
