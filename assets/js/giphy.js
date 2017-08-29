@@ -5,49 +5,54 @@ var flowers = [
       "Raflesia",
       "Camomile",
       "Hastas",
-      "Lilic"
+      "Lilic",
+      "anemone"
      ];
 
+     // Calling the renderButtons function to display the intial buttons
+      renderButtons();
+    
+
       // displayFlowerInfo function re-renders the HTML to display the appropriate content
-      function displayFlowerInfo() {
+      // function displayFlowerInfo() {
 
-        var flower = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=5";
+      //   var flower = $(this).attr("data-flower");
+      //   var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      //   flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=1";
 
-        // Creating an AJAX call for the specific flower button being clicked
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).done(function(response) {
+      //   // Creating an AJAX call for the specific flower button being clicked
+      //   $.ajax({
+      //     url: queryURL,
+      //     method: "GET"
+      //   }).done(function(response) {
 
-          // Creating a div to hold the flower
-          var flowerDiv = $("<div class='flower'>");
+      //     // Creating a div to hold the flower
+      //     var flowerDiv = $("<div class='flower'>");
 
-          // Storing the rating data
-          var rating = response.Rated;
+      //     // Storing the rating data
+      //     var rating = response.Rated;
 
-          // Creating an element to have the rating displayed
-          var pOne = $("<p>").text("Rating: " + rating);
+      //     // Creating an element to have the rating displayed
+      //     var pOne = $("<p>").text("Rating: " + rating);
 
-          // Displaying the rating
-          flowerDiv.append(pOne);
+      //     // Displaying the rating
+      //     flowerDiv.append(pOne);
 
          
-          // Retrieving the URL for the image
-          var imgURL = response.Poster;
+      //     // Retrieving the URL for the image
+      //     var imgURL = response.Poster;
 
-          // Creating an element to hold the image
-          var image = $("<img>").attr("src", imgURL);
+      //     // Creating an element to hold the image
+      //     var image = $("<img>").attr("src", imgURL);
 
-          // Appending the image
-          flowerDiv.append(image);
+      //     // Appending the image
+      //     flowerDiv.append(image);
 
-          // Putting the entire flower above the previous flowers
-          $("#flowers-view").prepend(flowerDiv);
-        });
+      //     // Putting the entire flower above the previous flowers
+      //     $("#flowers-view").prepend(flowerDiv);
+      //   });
 
-      }
+      // }
 
       // Function for displaying flower data
       function renderButtons() {
@@ -65,7 +70,7 @@ var flowers = [
           // Adding a class of flower to our button
           a.addClass("flower");
           // Adding a data-attribute
-          a.attr("data-name", flowers[i]);
+          a.attr("data-flower", flowers[i]);
           // Providing the initial button text
           // Adding the button to the buttons-view div
           a.text(flowers[i]);
@@ -86,18 +91,16 @@ var flowers = [
         renderButtons();
       });
 
-      // Adding a click event listener to all elements with a class of "flower"
-      $(document).on("click", ".flower", displayFlowerInfo);
+      
 
-      // Calling the renderButtons function to display the intial buttons
-      renderButtons();
+      
+
+    $("#buttons-view").on("click", ".flower", function() {
     
-
-    $("button").on("click", function() {
 
       var flower = $(this).attr("data-flower");
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=5";
+        flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=3";
 
       $.ajax({
         url: queryURL,
@@ -131,7 +134,8 @@ var flowers = [
           }
           console.log(response);
 
-  $(".img").on("click", function() {
+  $("#gifs-appear-here").on("click", ".img", function() {
+  
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var src_state = $(this).attr("src_state");
       var src_moving = $(this).attr("src_moving");
