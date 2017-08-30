@@ -22,9 +22,11 @@ input {
 	}
 	#gifts-appear-here {
 		max-height: 200px;
+		width: :600px;
 	}
 	div.gifts-appear-here {
 		height: 200px;
+		width: :600px;
 	}
 
 	.form-control {
@@ -53,9 +55,11 @@ input {
 		margin:10px;
 		border:2px solid black;
 		border-radius: 5px;
+		height: 100px;
+		width: :600px;
 	}
 	div.header, div.container{
-		height: 2000%;
+		height: 200%;
 	}
 
 	div {
@@ -66,6 +70,6 @@ input {
 
 	div#gifs-appear-here{
 		height: 200px;
-		width: 50%;
+		width: 500%;
 		
 	}

@@ -56,7 +56,7 @@ $( document ).ready(function(){
 
       
 
-      $(".flower").on("click", function() {
+      $("div").on("click", "button", function() {
     // have a problem here as it grabs dynamicaly created buttons but static ones it does not grab
 
     var flower = $(this).attr("data-flower");
