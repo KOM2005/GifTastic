@@ -1,75 +1,43 @@
-* {
-
-}
 
 html {
-	height:80%;
+	height:100%;
 }
 
 body {
 
 }
-.container {
-	size: 200px;
+
+.clear-both {
+	clear:both;
 }
-button,
-form,
-input {
-	margin: 5px;
 
-	.clear-both {
-		clear:both;
-	}
-	#gifts-appear-here {
-		max-height: 200px;
-		width: :600px;
-	}
-	div.gifts-appear-here {
-		height: 200px;
-		width: :600px;
-	}
+#flower-input {
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:15px;
+	width:20%;
+	background-color:turquoise;
+}
 
-	.form-control {
-		margin-left:10%;
-		margin-right:10%;
-		margin-top:15px;
-		width:80%;
-		background-color:rgba(240, 240, 240, 1);
-	}
 
-	.gifButton {
-		background-color:rgba(200, 255, 255, 1);
-		margin-left:5px; 
-	}
 
-	.div-css {
-		float:left;
-		margin:10px;
-		border:2px solid black;
-		border-radius: 5px;
-	}
+#add-flower {
+	background-color:turquoise;
+	
+}
 
-	.item
-	{
-		float:left;
-		margin:10px;
-		border:2px solid black;
-		border-radius: 5px;
-		height: 100px;
-		width: :600px;
-	}
-	div.header, div.container{
-		height: 200%;
-	}
 
-	div {
-		height: 200px;
-		width: 50%;
-		background-color: powderblue;
-	}
+.flower {
+	background-color:turquoise;
+	margin-left:5px; 
+}
 
-	div#gifs-appear-here{
-		height: 200px;
-		width: 500%;
-		
-	}
+.item {
+	float:left;
+	margin:10px;
+	border:2px solid black;
+	border-radius: 5px;
+}
+.img {
+	max-height: 200px;
+}

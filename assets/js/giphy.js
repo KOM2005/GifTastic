@@ -57,7 +57,7 @@ $( document ).ready(function(){
       
 
       $("div").on("click", "button", function() {
-    // have a problem here as it grabs dynamicaly created buttons but static ones it does not grab
+   
 
     var flower = $(this).attr("data-flower");
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
