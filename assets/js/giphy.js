@@ -60,7 +60,7 @@ $( document ).ready(function(){
    
 
     var flower = $(this).attr("data-flower");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=10";
 
     $.ajax({
