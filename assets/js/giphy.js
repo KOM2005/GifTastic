@@ -57,45 +57,45 @@ $( document ).ready(function(){
       
 
       $("div").on("click", "button", function() {
-   
+       
 
-    var flower = $(this).attr("data-flower");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=10";
+        var flower = $(this).attr("data-flower");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        flower + "&api_key=9c7a5bdb80b747f29ef6073dd653f63b&limit=5";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).done(function(response) {
-
-
-
-     var results = response.data;
-
-     for (var i = 0; i < results.length; i++) {
-      var flowerDiv = $("<div class='item'>");
-
-      var rating = results[i].rating;
-
-      var p = $("<p>").text("Rating: " + rating);
-
-      var flowerImage = $("<img>");
-      flowerImage.attr("src", results[i].images.fixed_height_still.url);
-
-      flowerImage.attr("src_moving", results[i].images.fixed_height.url);
-      flowerImage.attr("src_still", results[i].images.fixed_height_still.url);
-      flowerImage.attr("src_state", "still");
-      flowerImage.attr("class", "img");
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
 
 
-      flowerDiv.prepend(p);
-      flowerDiv.prepend(flowerImage);
 
-      $("#gifs-appear-here").prepend(flowerDiv);
-    }
-    console.log(response);
+         var results = response.data;
 
-    $("#gifs-appear-here").on("click", ".img", function() {
+         for (var i = 0; i < results.length; i++) {
+          var flowerDiv = $("<div class='item'>");
+
+          var rating = results[i].rating;
+
+          var p = $("<p>").text("Rating: " + rating);
+
+          var flowerImage = $("<img>");
+          flowerImage.attr("src", results[i].images.fixed_height_still.url);
+
+          flowerImage.attr("src_moving", results[i].images.fixed_height.url);
+          flowerImage.attr("src_still", results[i].images.fixed_height_still.url);
+          flowerImage.attr("src_state", "still");
+          flowerImage.attr("class", "img");
+
+
+          flowerDiv.prepend(p);
+          flowerDiv.prepend(flowerImage);
+
+          $("#gifs-appear-here").prepend(flowerDiv);
+        }
+        console.log(response);
+
+        $("#gifs-appear-here").on("click", ".img", function() {
 
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var src_state = $(this).attr("src_state");
@@ -116,7 +116,7 @@ $( document ).ready(function(){
       }
 
     });
-  });
-  });
+      });
+      });
 
     });
